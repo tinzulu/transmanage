@@ -45,14 +45,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmAssignments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmAssignments.Designer.cs">
+      <DependentUpon>frmAssignments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecordFalts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordFalts.Designer.cs">
+      <DependentUpon>frmRecordFalts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegDriver.Designer.cs">
+      <DependentUpon>frmRegDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrucks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrucks.Designer.cs">
+      <DependentUpon>frmTrucks.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAssignments.resx">
+      <DependentUpon>frmAssignments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordFalts.resx">
+      <DependentUpon>frmRecordFalts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegDriver.resx">
+      <DependentUpon>frmRegDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrucks.resx">
+      <DependentUpon>frmTrucks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

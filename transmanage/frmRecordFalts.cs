@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace transmanage
 {
-    public partial class Form1 : Form
+    public partial class frmRecordFalts : Form
     {
-        public Form1()
+        public frmRecordFalts()
         {
             InitializeComponent();
         }
