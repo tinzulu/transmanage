@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -60,41 +60,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // dateTimePicker1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fault Category";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 81);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(159, 22);
+            this.dateTimePicker1.TabIndex = 7;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fault Description";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 14);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Date";
             // 
-            // label3
+            // textBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 14);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Truck";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(124, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 22);
-            this.comboBox1.TabIndex = 3;
+            this.textBox1.Location = new System.Drawing.Point(124, 107);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(350, 73);
+            this.textBox1.TabIndex = 5;
             // 
             // comboBox2
             // 
@@ -105,30 +94,41 @@
             this.comboBox2.Size = new System.Drawing.Size(159, 22);
             this.comboBox2.TabIndex = 4;
             // 
-            // textBox1
+            // comboBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 107);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(350, 73);
-            this.textBox1.TabIndex = 5;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(124, 24);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(159, 22);
+            this.comboBox1.TabIndex = 3;
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 14);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Truck";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 14);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Truck";
             // 
-            // dateTimePicker1
+            // label2
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 81);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(159, 22);
-            this.dateTimePicker1.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 14);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Fault Description";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Fault Category";
             // 
             // button1
             // 
