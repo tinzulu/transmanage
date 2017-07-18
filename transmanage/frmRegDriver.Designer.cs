@@ -41,11 +41,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDrivers = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -166,13 +166,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // dataGridView1
+            // dgvDrivers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 224);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(558, 185);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvDrivers.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvDrivers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDrivers.Location = new System.Drawing.Point(8, 224);
+            this.dgvDrivers.Name = "dgvDrivers";
+            this.dgvDrivers.RowHeadersVisible = false;
+            this.dgvDrivers.Size = new System.Drawing.Size(558, 185);
+            this.dgvDrivers.TabIndex = 1;
             // 
             // btnSave
             // 
@@ -200,7 +202,7 @@
             this.ClientSize = new System.Drawing.Size(576, 410);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDrivers);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -208,9 +210,10 @@
             this.Name = "frmRegDriver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Driver";
+            this.Load += new System.EventHandler(this.frmRegDriver_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,7 +233,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDrivers;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
     }
