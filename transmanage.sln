@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "transmanage", "transmanage\transmanage.csproj", "{49D6721B-B8E1-4CF5-BF8E-4AE046CB58ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{475BF71B-3999-487F-8625-5E2D952F7F59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{42741CE2-5BC6-4CA4-A9F1-29F61C736030}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{49D6721B-B8E1-4CF5-BF8E-4AE046CB58ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49D6721B-B8E1-4CF5-BF8E-4AE046CB58ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49D6721B-B8E1-4CF5-BF8E-4AE046CB58ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{475BF71B-3999-487F-8625-5E2D952F7F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475BF71B-3999-487F-8625-5E2D952F7F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475BF71B-3999-487F-8625-5E2D952F7F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475BF71B-3999-487F-8625-5E2D952F7F59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42741CE2-5BC6-4CA4-A9F1-29F61C736030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42741CE2-5BC6-4CA4-A9F1-29F61C736030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42741CE2-5BC6-4CA4-A9F1-29F61C736030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42741CE2-5BC6-4CA4-A9F1-29F61C736030}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

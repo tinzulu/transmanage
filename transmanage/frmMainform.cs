@@ -68,12 +68,12 @@ namespace transmanage
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+            //toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            //statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,6 +107,30 @@ namespace transmanage
         private void addDriverToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegDriver frmD = new frmRegDriver();
+            frmD.ShowDialog();
+        }
+
+        private void assignToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAssignments frmAs = new frmAssignments();
+            frmAs.ShowDialog();
+        }
+
+        private void newToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmTrucks frmT = new frmTrucks();
+            frmT.ShowDialog();
+        }
+
+        private void newToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmRecordFalts frmRFaults = new frmRecordFalts();
+            frmRFaults.ShowDialog();
         }
     }
 }

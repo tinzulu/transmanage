@@ -16,7 +16,7 @@ namespace transmanage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRegDriver());
+            Application.Run(new frmMainform());
         }
     }
 }

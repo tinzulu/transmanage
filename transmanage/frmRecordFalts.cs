@@ -16,5 +16,10 @@ namespace transmanage
         {
             InitializeComponent();
         }
+
+        private void frmRecordFalts_Load(object sender, EventArgs e)
+        {
+                 
+        }
     }
 }
