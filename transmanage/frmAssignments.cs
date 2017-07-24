@@ -26,13 +26,14 @@ namespace transmanage
         {
             Dbconnect d = new Dbconnect();
             var c = d.getConnection();
-            var select = "SELECT driverID, drivernames FROM drivers";
+            var select = "SELECT driverID, drivernames FROM drivers WHERE status = 'Available'";
             MySqlCommand cmd = new MySqlCommand(select, c);
             MySqlDataAdapter da = new MySqlDataAdapter(select, c);
             DataSet ds = new DataSet();
-            da.Fill(ds);
+            
             cmbDriver.DisplayMember = "drivernames";
             cmbDriver.ValueMember = "driverID";
+            da.Fill(ds);
             cmbDriver.DataSource = ds.Tables[0];
             c.Close();
         }
@@ -41,13 +42,14 @@ namespace transmanage
         {
             Dbconnect d = new Dbconnect();
             var c = d.getConnection();
-            var select = "SELECT truckID, regno FROM trucks";
+            var select = "SELECT truckID, regno FROM trucks WHERE truckStatus = 'Available'";
             MySqlCommand cmd = new MySqlCommand(select, c);
             MySqlDataAdapter da = new MySqlDataAdapter(select, c);
             DataSet ds = new DataSet();
-            da.Fill(ds);
+           
             cmbTruck.DisplayMember = "regno";
             cmbTruck.ValueMember = "truckID";
+            da.Fill(ds);
             cmbTruck.DataSource = ds.Tables[0];
             c.Close();
         }
@@ -60,9 +62,9 @@ namespace transmanage
             MySqlCommand cmd = new MySqlCommand(select, c);
             MySqlDataAdapter da = new MySqlDataAdapter(select, c);
             DataSet ds = new DataSet();
-            da.Fill(ds);
             cmbRoute.DisplayMember = "routeDescription";
             cmbRoute.ValueMember = "routeID";
+            da.Fill(ds);
             cmbRoute.DataSource = ds.Tables[0];
             c.Close();
         }
@@ -70,7 +72,7 @@ namespace transmanage
         {
             Dbconnect d = new Dbconnect();
             var c = d.getConnection();
-            var select = "SELECT drivernames AS Driver, trucknum AS Truck, assignmentDate AS Date, assignmentStatus AS Status FROM assignments INNER JOIN drivers ON drivernum = driverID";
+            var select = "SELECT drivernames AS Driver,CONCAT(regno,' ',truckDescription) AS Vehicle, assignmentStatus AS Status FROM assignments INNER JOIN drivers ON drivernum = driverID INNER JOIN trucks ON truckNum = truckID";
             var dataAdapter = new MySqlDataAdapter(select, c);
             var commandBuilder = new MySqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
@@ -93,15 +95,21 @@ namespace transmanage
                 Dbconnect d = new Dbconnect();
                 var c = d.getConnection();
                 string sql = "INSERT INTO assignments(driverNum,truckNum,route,assignmentDate,assignmentStatus) VALUES('" + (cmbDriver.Text) + "','" + (cmbTruck.Text) + "','" + (cmbRoute.Text) + "','" + txtDate.Text + "','Active')";
+                string sqlUser = "UPDATE drives SET status = 'Out' WHERE driverID = '" + cmbDriver.Text + "'";
+                string sqlTruck = "UPDATE trucks SET truckStatus = 'Out' WHERE truckID = '" + cmbTruck.Text + "'";
                 try
                 {
                     MySqlCommand cmdSave = new MySqlCommand(sql, c);
+                    MySqlCommand cmdUpdateD = new MySqlCommand(sqlUser, c);
+                    MySqlCommand cmdTruck = new MySqlCommand(sqlTruck, c);
                     int i = cmdSave.ExecuteNonQuery();
                     if (i >= 1)
                     {
                         MessageBox.Show("Assignment details has been saved");
                         Clear();
                         loadGrid();
+                        loadDrivers();
+                        loadTrucks();
                     }
                     else
                     {
