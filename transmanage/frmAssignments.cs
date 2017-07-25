@@ -26,7 +26,7 @@ namespace transmanage
         {
             Dbconnect d = new Dbconnect();
             var c = d.getConnection();
-            var select = "SELECT driverID, drivernames FROM drivers WHERE status = 'Available'";
+            var select = "SELECT driverID, drivernames FROM drivers WHERE status = 'Active'";
             MySqlCommand cmd = new MySqlCommand(select, c);
             MySqlDataAdapter da = new MySqlDataAdapter(select, c);
             DataSet ds = new DataSet();
@@ -35,6 +35,7 @@ namespace transmanage
             cmbDriver.ValueMember = "driverID";
             da.Fill(ds);
             cmbDriver.DataSource = ds.Tables[0];
+
             c.Close();
         }
 
@@ -72,7 +73,7 @@ namespace transmanage
         {
             Dbconnect d = new Dbconnect();
             var c = d.getConnection();
-            var select = "SELECT drivernames AS Driver,CONCAT(regno,' ',truckDescription) AS Vehicle, assignmentStatus AS Status FROM assignments INNER JOIN drivers ON drivernum = driverID INNER JOIN trucks ON truckNum = truckID";
+            var select = "SELECT drivernames AS Driver,CONCAT(regno,' ',truckDescription) AS Vehicle, assignmentDate AS Date, assignmentStatus AS Status FROM assignments INNER JOIN drivers ON drivernum = driverID INNER JOIN trucks ON truckNum = truckID";
             var dataAdapter = new MySqlDataAdapter(select, c);
             var commandBuilder = new MySqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
@@ -94,16 +95,19 @@ namespace transmanage
             {
                 Dbconnect d = new Dbconnect();
                 var c = d.getConnection();
-                string sql = "INSERT INTO assignments(driverNum,truckNum,route,assignmentDate,assignmentStatus) VALUES('" + (cmbDriver.Text) + "','" + (cmbTruck.Text) + "','" + (cmbRoute.Text) + "','" + txtDate.Text + "','Active')";
-                string sqlUser = "UPDATE drives SET status = 'Out' WHERE driverID = '" + cmbDriver.Text + "'";
-                string sqlTruck = "UPDATE trucks SET truckStatus = 'Out' WHERE truckID = '" + cmbTruck.Text + "'";
+                string sql = "INSERT INTO assignments(driverNum,truckNum,route,assignmentDate,assignmentStatus) VALUES('" + (cmbDriver.SelectedValue) + "','" + (cmbTruck.SelectedValue) + "','" + (cmbRoute.SelectedValue) + "','" + Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd") + "','Active')";
+                string sqlUser = "UPDATE drivers SET status = 'Out' WHERE driverID = '" + cmbDriver.SelectedValue + "'";
+                string sqlTruck = "UPDATE trucks SET truckStatus = 'Out' WHERE truckID = '" + cmbTruck.SelectedValue + "'";
                 try
                 {
                     MySqlCommand cmdSave = new MySqlCommand(sql, c);
                     MySqlCommand cmdUpdateD = new MySqlCommand(sqlUser, c);
+                    int j = cmdUpdateD.ExecuteNonQuery();
+                    
                     MySqlCommand cmdTruck = new MySqlCommand(sqlTruck, c);
+                    int k = cmdTruck.ExecuteNonQuery();
                     int i = cmdSave.ExecuteNonQuery();
-                    if (i >= 1)
+                    if (i >= 1 && j >=1 && k >=1)
                     {
                         MessageBox.Show("Assignment details has been saved");
                         Clear();

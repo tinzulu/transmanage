@@ -13,7 +13,7 @@ namespace transmanage
 
         public MySqlConnection getConnection()
         {
-            cn = new MySqlConnection("server=127.0.0.1;user=root;password=;database=zimascodb");
+            cn = new MySqlConnection("server=127.0.0.1;user=root;password=;database=zimascodb;convert zero datetime=True");
             cn.Open();
             return cn;
         }
