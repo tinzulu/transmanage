@@ -132,5 +132,12 @@ namespace transmanage
             frmRecordFalts frmRFaults = new frmRecordFalts();
             frmRFaults.ShowDialog();
         }
+
+        private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFaultsCategories faultsCat = new frmFaultsCategories();
+            faultsCat.StartPosition = FormStartPosition.CenterScreen;
+           faultsCat.ShowDialog();
+        }
     }
 }

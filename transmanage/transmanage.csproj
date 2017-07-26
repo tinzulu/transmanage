@@ -55,6 +55,12 @@
     <Compile Include="frmAssignments.Designer.cs">
       <DependentUpon>frmAssignments.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFaultsCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFaultsCategories.Designer.cs">
+      <DependentUpon>frmFaultsCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMainform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAssignments.resx">
       <DependentUpon>frmAssignments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFaultsCategories.resx">
+      <DependentUpon>frmFaultsCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainform.resx">
       <DependentUpon>frmMainform.cs</DependentUpon>
