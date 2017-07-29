@@ -85,6 +85,7 @@
     <Compile Include="frmTrucks.Designer.cs">
       <DependentUpon>frmTrucks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Security.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAssignments.resx">
