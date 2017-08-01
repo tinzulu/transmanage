@@ -18,7 +18,7 @@ namespace transmanage
 
         public bool Compare(string pass, string stored)
         {
-            HashAlgorithm sha = SHA256.Create();
+            HashAlgorithm sha = SHA1.Create();
             Byte[] hash = sha.ComputeHash(Encoding.UTF8.GetBytes(pass));
             string passHash = Convert.ToBase64String(hash);
 
