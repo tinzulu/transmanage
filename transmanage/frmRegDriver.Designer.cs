@@ -44,12 +44,16 @@
             this.dgvDrivers = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbLevel);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtxAddress);
             this.groupBox1.Controls.Add(this.txtLicenseNo);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -195,6 +199,27 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(305, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 14);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Level";
+            // 
+            // cmbLevel
+            // 
+            this.cmbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLevel.FormattingEnabled = true;
+            this.cmbLevel.Items.AddRange(new object[] {
+            "Driver",
+            "Mechanic"});
+            this.cmbLevel.Location = new System.Drawing.Point(392, 83);
+            this.cmbLevel.Name = "cmbLevel";
+            this.cmbLevel.Size = new System.Drawing.Size(155, 22);
+            this.cmbLevel.TabIndex = 13;
+            // 
             // frmRegDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -236,6 +261,8 @@
         private System.Windows.Forms.DataGridView dgvDrivers;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbLevel;
     }
 }
 

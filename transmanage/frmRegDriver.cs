@@ -56,7 +56,7 @@ namespace transmanage
                 var c = d.getConnection();
                 //Security secure = new Security();
                 string pass = "password"; // secure.HashPass("password");
-                string sql = "INSERT INTO drivers(drivernames,nationalID,licenseNo,contactCell,email,physicalAddress,password,status,regDate) VALUES('" + txtNames.Text + "','" + txtNationalID.Text + "', '" + txtLicenseNo.Text + "','" + txtCell.Text + "','" + txtEmail.Text + "','" + txtxAddress.Text + "','" + pass + "','Active','" + Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd") + "')";
+                string sql = "INSERT INTO drivers(drivernames,nationalID,licenseNo,contactCell,email,physicalAddress,password,status,regDate,aLevel) VALUES('" + txtNames.Text + "','" + txtNationalID.Text + "', '" + txtLicenseNo.Text + "','" + txtCell.Text + "','" + txtEmail.Text + "','" + txtxAddress.Text + "','" + pass + "','Active','" + Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd") + "','"+ cmbLevel.Text +"')";
                 try
                 {
                     MySqlCommand cmdSave = new MySqlCommand(sql, c);
