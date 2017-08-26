@@ -98,15 +98,19 @@ namespace transmanage
                 string sql = "INSERT INTO assignments(driverNum,truckNum,route,assignmentDate,assignmentStatus) VALUES('" + (cmbDriver.SelectedValue) + "','" + (cmbTruck.SelectedValue) + "','" + (cmbRoute.SelectedValue) + "','" + Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd") + "','Active')";
                 string sqlUser = "UPDATE drivers SET status = 'Out' WHERE driverID = '" + cmbDriver.SelectedValue + "'";
                 string sqlTruck = "UPDATE trucks SET truckStatus = 'Out' WHERE truckID = '" + cmbTruck.SelectedValue + "'";
+                string msg = "You have been assigned " + cmbTruck.Text + " to route " + cmbRoute.Text + " on "+ Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd")+ " have a safe journey.";
+                string sqlMesg = "INSERT INTO messages(receiver,messageBody,sender,isRead,mDate) VALUES('" + cmbDriver.SelectedValue + "','" + msg + "','admin',0,'" + Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd") + "')";
                 try
                 {
                     MySqlCommand cmdSave = new MySqlCommand(sql, c);
                     MySqlCommand cmdUpdateD = new MySqlCommand(sqlUser, c);
+                    MySqlCommand cmdSavemessage = new MySqlCommand(sqlMesg, c);
                     int j = cmdUpdateD.ExecuteNonQuery();
                     
                     MySqlCommand cmdTruck = new MySqlCommand(sqlTruck, c);
                     int k = cmdTruck.ExecuteNonQuery();
                     int i = cmdSave.ExecuteNonQuery();
+                    int z = cmdSavemessage.ExecuteNonQuery();
                     if (i >= 1 && j >=1 && k >=1)
                     {
                         MessageBox.Show("Assignment details has been saved");
